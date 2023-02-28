@@ -14,8 +14,15 @@ public class FirstController {
     }
 
     @GetMapping("/info")
-    public String info(@RequestParam String info) {
-        return "Page: " + info;
+    public String info(@RequestParam("name") String name,
+                       @RequestParam("surname") String surname,
+                       @RequestParam("title") String title,
+                       @RequestParam("date") String date,
+                       @RequestParam("description") String description) {
+        return "Информация: " + "меня зовут: " + name + " " + surname +
+                ", проект называется: " + title +
+                " дата создания проекта: " + date +
+                ", краткое описание проекта: " + description;
     }
 
 
